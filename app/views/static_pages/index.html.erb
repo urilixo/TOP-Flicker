@@ -1,0 +1,10 @@
+<%= form_with url:"/index" do |f| %>
+  <%= f.label :id %>
+  <%= f.text_field :id %>
+  <%= f.submit %>
+<% end %>
+<% unless params[:id].nil? %>
+  <% @photos.each do |photo| %>>
+    <img src="<%= Flickr.url_n(photo) %>">
+  <% end %>
+<% end %>
